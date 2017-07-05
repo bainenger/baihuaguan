@@ -1,0 +1,227 @@
+@charset "utf-8";
+/* CSS Document */
+/*=====样式重置=====*/
+body,ul,li,ol,dl,dt,dd,h1,h2,h3,h4,h5,h6,a,img,input{padding:0;margin:0;}
+ul,ol{list-style:none;}
+img{border:0;display:block;}
+body{font-size:12px;color:#3e3e3e;font-family:"微软雅黑";}
+a{text-decoration:none;color:#000;}
+a:hover{texr-decoration:none;color:#f60;}
+/*======公共样式=====*/
+.w{width:1200px;margin:0 auto;}
+.l{float:left;}
+.r{float:right;}
+*{cursor:pointer}
+/*=======aside====*/
+#aside{cursor:pointer}
+#aside #box1{width:114px;position:fixed ;right:0;top:20%;z-index:2;/*display:none*/}
+#aside #box1 span{z-index:8;width:20px;height:20px; line-height:20px;text-align:center; /*background:#000;*/color:#fd8247;font-size:18px;position:absolute;right:0;top:0;}
+#aside #box2{z-index:1;position:fixed ;right:0;top:44%;/*display:none*/}
+/*=======help====*/
+#help{ cursor:pointer;width:450px; height:250px;position:fixed;top:30%;left:30%;display:none;z-index:2;} 
+#help span{color:#fff;font-size:20px;position:fixed;top:30%;left:64%;/*display:none*/}
+
+/*=====header=====*/
+#header{width:100%; height:96px; margin-top:20px}
+#header h1{width:230px; height:74px}
+#header .search{width:550px; height:100%;margin-left:40px}
+#header .search  .sea{ position:relative}
+#header .search  .sea input{ width:380px; height:30px;border:2px solid #fd8a49;border-radius:6px; padding:4px 30px}
+#header .search  .sea img{ position:absolute;top:12px;left:8px}
+#header .search  .sea span{/*width:40px; height:30px;*/ background:#fd8a49;padding:12px 20px; position:absolute; left:379px; top:1px;border-radius:0 6px 6px 0}
+#header .search ul li{margin-right:6px}
+#header .search .telphone{width:286px; height:96px; line-height:96px; position:relative;}
+#header .search .telphone span.one img{ width:49px; height:49px; margin-right:10px}
+/*=====nav=====*/
+#nav{width:100%;height:50px; line-height:50px;background:#fd8247;}
+#nav ul{width:100%;height:50px;line-height:50px;/* text-align:center;*/}
+#nav ul li{width:100px; display:inline-block;text-align:center;margin-right:2px;font-size:16px;}
+#nav ul li.on{ background:#ed810c; width:200px}
+#nav ul li.on:hover{width:200px;}
+#nav ul li:hover{ background:#ed810c;width:100px; height:50px}
+#nav ul li.last{ position:relative}
+#nav ul li.last img{ position:absolute; top:0px; left:50px}
+#nav ul li a{color:#fff;}
+#nav ul li.car{width:195px; height:29px; background:#fff; border-radius:5px;/* position:absolute;top:-30px;*/ margin-top:10px}
+#nav ul li.car{ font-size:12px;}
+#nav ul li.car img{margin-left:5px;margin-top:4px;}
+#nav ul li.car a{ color:#777777;margin-top:-10px; margin-left:20px}
+#nav ul li.car a:hover{color:#fd8247}
+
+
+/*====con======*/
+#con{width:100%;overflow:hidden}
+#con #con1{width:100%; height:156px}
+#con #con1 p{ width:988px; }
+#con #con1 p img{width:16px; height:16px; margin-right:12px}
+
+#con #con2{width:100%; height:620px; border:1px  solid #ccc;margin-top:-120px}
+#con #con2 .left{ width:452px; height:100%; position:relative}
+
+#con #con2 .left #bigbox{width:420px; height:480px; background-image:url(../images/detail/4370_P_1486403482397.jpg) ; background-size:420px 480px; border:1px solid #ccc;margin-top:10px; margin-left:10px; position:relative}
+#con #con2 .left #bigbox #mirror{width:200px; height:200px; background:#fff;opacity:0.5;filter:alpha(opacity:50); position:absolute; display:none}
+#con #con2 .left #bigbox1{ width:96%; height:110px; }
+#con #con2 .left #bigbox1 div{width:18%; height:88px; border:1px solid #ccc;margin:3px;margin-top:16px}
+#con #con2 .left #bigbox1 div img{ width:100%; height:100%}
+#con #con2 .left #bigbox1 div.one{margin-left:6px}
+
+#con #con2 .left #smallbox { width:400px; height:400px;z-index:1; border:1px solid #ccc; position:relative;margin-top:-592px;margin-left:433px;overflow:hidden; display:none}
+#con #con2 .left #smallbox #showImg{width:840px; height:960px; background-image:url(../images/detail/4370_P_1486403482397.jpg) ; background-size:840px 960px; position:absolute}
+
+/*
+#con #con2    #wrap{
+      width: 400px;height: 480px;float: left;
+     
+    }
+#con #con2    #bigImg{
+      width: 400px;height: 400px; background:url(../images/detail/1.jpg) no-repeat top left;
+      background-size: 100% 100%;position: relative;
+    }
+#con #con2    #show{
+         width: 400px;height: 400px;float: left; background-size: 800px 800px;display: none;
+    }
+#con #con2    #smallImg{
+      width: 400px;height: 80px;
+    }
+#con #con2    #smallImg li{
+      width: 20%;height: 100%;float: left;
+    }
+#con #con2    .border{
+      box-sizing:border-box;border: 1px solid rgb(196, 0, 0);
+    }
+#con #con2    #smallImg li img{
+      width: 100%;height: 100%;
+    }
+#con #con2    #smallImg li:nth-child(1){
+      background:url(../images/detail/1.jpg) no-repeat top left;
+      background-size: 100% 100%;
+     }
+#con #con2      #smallImg li:nth-child(2){
+      background:url(../images/detail/2.jpg) no-repeat top left;
+      background-size: 100% 100%;
+     }
+#con #con2      #smallImg li:nth-child(3){
+      background: url(../images/detail/3.jpg) no-repeat top left;
+      background-size: 100% 100%;
+     } 
+#con #con2     #smallImg li:nth-child(4){
+      background:url(../images/detail/4.jpg) no-repeat top left;
+      background-size: 100% 100%;
+     } 
+#con #con2     #smallImg li:nth-child(5){
+      background:url(../images/detail/5.jpg) no-repeat top left;
+      background-size: 100% 100%;
+     }
+#con #con2     #jinzi{
+        width: 100px;height: 100px;background: white;opacity: 0.8;position: relative;top: 0;left: 0;display: none;
+     }*/
+#con #con2 .right{width:686px; height:100%;}
+#con #con2 .right p{margin:28px 0}
+#con #con2 .right p span{font-size:14px; font-weight:bold}
+#con #con2 .right .infor{width:100%; height:70px}
+#con #con2 .right .infor .price{ margin-right:30px;width:245px; height:100%; border:2px solid #ff6599; position:relative}
+#con #con2 .right .infor .price span{ position:absolute}
+#con #con2 .right .infor .price span.one{top:4px;left:4px;}
+#con #con2 .right .infor .price span.two{top:42px;left:4px;}
+#con #con2 .right .infor .price span.two b{ font-weight:100;text-decoration:line-through}
+#con #con2 .right .infor .price span.thr{top:0px;left:225px;width:20px; height:70px; background:#ff6599;line-height:20px; text-align:center;color:#fff}
+#con #con2 .right .infor .ma{width:190px; height:70px;position:relative}
+#con #con2 .right .infor .ma img.one{width:70px; height:100%}
+#con #con2 .right .infor .ma img.two{position:absolute;top:3px; left:75px}
+#con #con2 .right  .buy{width:100%; height:50px;border-bottom:1px dashed #ccc;padding-bottom:20px}
+#con #con2 .right  .buy sapn.yi{ font-size:14px; margin-right:10px;margin-top:4px}
+#con #con2 .right  .buy sapn.yi input{width:50px; height:20px}
+#con #con2 .right  .buy sapn.si{font-size:16px; color:#ff6599;margin-left:20px; height:30px; line-height:30px}
+
+#con #con2 .right  .good{width:100%; height:20px; line-height:20px;border-bottom:1px dashed #ccc;padding-bottom:10px ;padding-top:10px}
+#con #con2 .right  .good li{margin-right:67px}
+#con #con2 .right  .good li.li2 span{font-size:16px;color:#ff6599}
+#con #con2 .right  .good li.li3{ position:relative;margin-right:120px}
+#con #con2 .right  .good li.li3 img{ position:absolute; top:-6px; left:57px;}
+#con #con2 .right  .good li.li4 span{font-size:16px;color:#3388c5}
+#con #con2 .right  .good li.li5 span{font-size:16px;color:#dda663}
+
+
+#con #con2 .right  .service{width:100%; height:20px; line-height:20px;padding-bottom:10px ;padding-top:10px; position:relative}
+#con #con2 .right  .service li{margin-right:67px}
+#con #con2 .right  .service li.se2 img { position:absolute;top:8px; left:97px}
+#con #con2 .right  .service li.se3 img { position:absolute;top:8px; left:226px}
+#con #con2 .right  .service li.se4 img { position:absolute;top:8px; left:364px}
+
+#con #con3{ width:100%; overflow:hidden}
+#con #con3 .left{ width:230px; height:2250px;}
+#con #con3 .left .up{ width:100%; height:1079px; border:1px solid #ccc; margin-bottom:10px; margin-top:10px;}
+#con #con3 .left .up .diyi{width:100%; height:190px; border-bottom:1px dashed #ccc}
+#con #con3 .left .up .diyi span{color:#fd8247; font-size:15px;padding:5px 5px;margin-top:5px}
+#con #con3 .left .up .diyi ul{ width:50px; height:200px;margin-right:10px}
+#con #con3 .left .up .diyi  ul li{margin:11px ; width:110px; height:20px}
+#con #con3 .left .up .dier{ height:170px;}
+#con #con3 .left .up .dier ul{height:170px;}
+#con #con3 .left .up .disan{ height:168px;}
+#con #con3 .left .up .disan ul{height:108px;}
+#con #con3 .left .up .disi{ height:132px;}
+#con #con3 .left .up .disi ul{height:130px;}
+#con #con3 .left .up .diwu{ height:165px;}
+#con #con3 .left .up .diwu ul{height:160px;}
+#con #con3 .left .up .diliu{ height:134px;}
+#con #con3 .left .up .diliu ul{height:130px;}
+#con #con3 .left .up .diqi{ height:72px;}
+#con #con3 .left .up .diqi ul{height:70px;}
+#con #con3 .left .up .diba{ height:36px; border:0}
+#con #con3 .left .up .diba ul{height:36px;}
+
+
+#con #con3 .left .down{width:100%; height:1224px; border:1px solid #ccc; }
+#con #con3 .left .down .hot{ width:100%; height:30px; line-height:30px; text-align:center;font-size:16px; border-bottom:1px solid #ccc}
+#con #con3 .left .down .hotpic{ width:100%; height:238px; border-bottom:1px dashed #ccc; position:relative}
+#con #con3 .left .down .hotpic img{ width:180px; height:180px;margin:0 auto}
+#con #con3 .left .down .hotpic .hot1{ font-size:14px; color:#ff8746; position:absolute;top:199px; left:7px}
+#con #con3 .left .down .hotpic .hot2{position:absolute;top:199px; left:141px; border:1px solid #ccc;padding:3px}
+#con #con3 .left .down .last{border:0}
+#con #con3 .right{ width:950px; overflow:hidden; border:1px solid #ccc; margin-left:10px;margin-top:10px}
+#con #con3 .right  ul{ width:100%; height:50px; font-size:18px; line-height:50px; text-align:center; background:#f9f9f9; border-bottom:1px solid #ccc;}
+#con #con3 .right  ul  li{ border-right:1px solid #ccc;width:120px; height:100%;}
+#con #con3 .right  ul  li.on{ background:#fff}
+#con #con3 .right  div { width:100%; overflow:hidden;}
+#con #con3 .right  div img{padding:20px 20px; margin-left:5px}
+#con #con3 .right  div img.pics{margin-left:64px}
+
+
+
+/*========footer=========*/
+
+
+@font-face {
+  font-family: 'iconfont';
+  src: url('../images/font/iconfont.eot');
+  src: url('../images/font/iconfont.eot?#iefix') format('embedded-opentype'),
+  url('../images/font/iconfont.woff') format('woff'),
+  url('../images/font/iconfont.ttf') format('truetype'),
+  url('../images/font/iconfont.svg#iconfont') format('svg');
+}
+.iconfont{
+  font-family:"iconfont" !important;
+  font-size:16px;font-style:normal;
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-stroke-width: 0.2px;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+footer{width:100%;overflow:hidden;margin-top:10px;}
+footer ul.pic{width:100%;height:62px; background:#fafafa;text-align:center; border-bottom:1px solid #dadada}
+footer ul.pic li{height:50px;display:inline-block;padding-top:5px;margin-right:70px;font-size:20px;cursor:pointer}
+footer ul.pic li i{font-size:45px;height:50px;}
+footer ul.pic li span.one{width:143px;height:40px;}
+footer ul.pic li span.two,footer ul.pic li span.three,footer ul.pic li span.five{width:98px;height:40px;}
+footer ul.pic li span.four{width:98px;height:40px;}
+{width:98px;height:40px;}
+footer ul.pic li:hover{color:#f60}
+footer .service{ width:100%; height:160px; background:#f6f6f6; padding-top:38px }
+footer .service .tel{width:225px; height:160px; margin-left:100px}
+footer .service .tel p{color:#666666}
+footer .service .tel .rx{font-size:15px}
+footer .service .tel b {margin-top:-34px; margin-left:42px; color:#fd8a49; font-size:27px; font-weight:100}
+footer .service .li1{ width:60px; height:160px;margin-left:80px}
+footer .service .li1 ul{width:100%; height:100%;list-style-type:disc;}
+footer .service .li1 ul li.one{list-style:none;font-size:14px;font-weight:bold}
+footer .last{width:100%;height:60px;text-align:center; color:#fff; background:#ffd080;padding:20px 0}

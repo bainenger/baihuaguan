@@ -1,0 +1,65 @@
+@charset "utf-8";
+/* CSS Document */
+/*=====样式重置=====*/
+body,ul,li,ol,dl,dt,dd,h1,h2,h3,h4,h5,h6,a,img,input{padding:0;margin:0;}
+ul,ol{list-style:none;}
+img{border:0;display:block;}
+body{font-size:12px;color:#3e3e3e;font-family:"微软雅黑";}
+a{text-decoration:none;color:#000;}
+a:hover{texr-decoration:none;color:#f60;}
+b{font-weight:100}
+/*======公共样式=====*/
+.w{width:1200px;margin:0 auto;}
+.l{float:left;}
+.r{float:right;}
+/**{cursor:pointer}*/
+
+/*=====nav=====*/
+#nav{width:100%;height:41px; line-height:41px;background:#eeeeee;}
+#nav ul{height:41px;line-height:41px;}
+#nav ul li{height:100%;line-height:100%;padding-left:10px}
+#nav ul li a{height:41px;line-height:41px;color:#888888}
+#nav ul li img{display:inline-block;}
+#nav ul li img.one{width:21px; height:17px}
+#nav ul.navs li a{border-right:1px dashed #ccc;padding-right:10px}
+#nav ul.navs li.last a{border-right:0}
+#nav ul.navs span{padding-left:5px}
+/*=====header=====*/
+#header{width:100%; height:66px;}
+#header img{ display:inline-block;}
+#header h1{ width:230px;height:74px; line-height:74px;}
+#header h1 img{width:100%; height:100%}
+#header ul{margin-top:-45px; height:100%}
+#header ul li{width:264px; height:80px; border-right:1px solid #e5e5e5; font-size:18px;padding-top:22px;padding-left:10px}
+#header ul li.two{width:269px; height:80px;}
+#header ul li.last {width:280px; height:80px;}
+#header ul li.last span {width:242px; height:80px;}
+#header ul li span{width:150px; height:40px}
+#header ul li span.one{width:221px; height:40px}
+#header ul li span.two{width:221px; height:40px}
+#header ul li b{font-size:16px}
+#header ul li.last,#header ul.pic li{border:0}
+#header ul.pic li img{ padding-top:10px}
+/*=====con=====*/
+#con{margin-top:100px;}
+#con #box{width:446px;height:520px; background:#f7286e}
+#con #box h1{ font-weight:100; color:#fff; margin-top:40px;margin-bottom:5px;margin-left:40%}
+#con #box .finish{width:420px;height:400px; background:#fff;/*margin:55px auto*/}
+#con #box .finish input{margin:10px 30px;width:80%; height:30px; padding-left:5px}
+#con #box .finish input.one{margin-top:30px}
+#con #box .finish input.two{width:120px}
+#con #box .finish a.yzm{width:140px; height:30px; background:#f3f3f3; text-align:center; font-size:14px; line-height:30px; border:1px solid #ccc;margin-left:170px; margin-top:-43px}
+#con #box .finish input.three{margin-top:20px;}
+#con #box .finish input.lasts{width:15px;margin-top:5px}
+#con #box .finish span{margin-left:-20px; margin-top:10px}
+#con #box .finish span a{ color:#fa1d61; font-size:14px;}
+#con #box .finish input.go{width:250px; height:40px; background:#fa1d62;border:0;margin:20px auto;cursor:pointer}
+
+/*========footer=========*/
+
+footer{width:100%;overflow:hidden;margin-top:40px}
+footer ul.nav{width:100%;height:60px; line-height:60px;text-align:center;}
+footer ul.nav li{display:inline-block;cursor:pointer}
+footer ul.nav li a{border-right:1px solid #000;padding-right:5px;}
+footer ul.nav li a.last{border-right:0;}
+footer .last{width:100%;height:60px;text-align:center;}
