@@ -425,32 +425,18 @@
 			$("mirror").style.display="none";
 			$("smallbox").style.display="none"
 		}
-		
-		
-		/*let bigbox1 =$("bigbox1") ;
+		let boxs =$("bigbox1").children ;
         let bigbox =$("bigbox");
-	   for (let i = 0; i <bigbox1.length; i++) {
-			  bigbox1[i].onclick = function () {
-					for (var j = 0; j <smallbox.length; j++) {
-					   bigbox1[j].className="";
-					}
-				   bigbox1[i].className="on";
-				   bigbox.style.src="../images/detail/"+(i+1)"+.jpg";
-				$("showImg").style.src="../images/detail/"+(i+1)"+.jpg";
+	   for (let i=0;i<boxs.length;i++) {
+			boxs[i].onclick = function () {
+			for (var j=0;j<boxs.length;j++) {
+				   boxs[j].className="l";
+				}
+			boxs[i].className="l one";
+			bigbox.style.backgroundImage="url(../images/detail/"+(i+1)+".jpg)";
+			$("showImg").style.backgroundImage="url(../images/detail/"+(i+1)+".jpg)";
 			  }
-	   }*/
+	   }
 };
 </script>
-<!-- <div id="bigbox">
-                            <div id="mirror"></div>
-                        </div>
-                        <div id="bigbox1">
-                            <div id="box1" class="l one"><img src="../images/detail/1.jpg"></div>
-                            <div id="box2" class="l"><img src="../images/detail/2.jpg"></div>
-                            <div id="box3" class="l"><img src="../images/detail/3.jpg"></div>
-                            <div id="box4" class="l"><img src="../images/detail/4.jpg"></div>
-                            <div id="box5" class="l"><img src="../images/detail/5.jpg"></div>
-                        </div>
-                        <div id="smallbox">
-                            <div id="showImg"></div>
-                        </div>-->
+
