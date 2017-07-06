@@ -11,14 +11,14 @@ a:hover{texr-decoration:none;color:#f60;}
 .w{width:1200px;margin:0 auto;}
 .l{float:left;}
 .r{float:right;}
-*{cursor:pointer}
+*{cursor:pointer;user-select: none;}
 /*=======aside====*/
 #aside{cursor:pointer}
 #aside #box1{width:114px;position:fixed ;right:0;top:20%;z-index:1;/*display:none*/}
 #aside #box1 span{width:20px;height:20px; line-height:20px;text-align:center; /*background:#000;*/color:#fd8247;font-size:18px;position:absolute;right:0;top:0;}
 #aside #box2{position:fixed ;right:0;top:35%;/*display:none*/}
 /*=======help====*/
-#help{ cursor:pointer;width:450px; height:250px;position:fixed;top:30%;left:30%;display:none;z-index:1;} 
+#help{ cursor:pointer;width:450px; height:250px;position:fixed;top:30%;left:30%;display:none;z-index:10;} 
 #help span{color:#fff;font-size:20px;position:fixed;top:30%;left:64%;/*display:none*/}
 
 /*=====nav=====*/
@@ -33,7 +33,7 @@ a:hover{texr-decoration:none;color:#f60;}
 #nav ul.l li.last input.left{width:250px; height:30px;border:none;border-radius:5px 0 0 5px}
 #nav ul.l li.last input.right{width:40px;height:30px;border:none;border-radius:0 5px 5px 0}
 #nav .navs li a:hover{color:#000}
-#nav1{border:1px solid #ccc;}
+/*#nav1{border:1px solid #ccc;}*/
 
 
 /*=====banner=====*/
@@ -46,8 +46,19 @@ a:hover{texr-decoration:none;color:#f60;}
 #banner #nav1 ul li a{margin-left:10px;}
 
 #banner #ban{width:971px; height:492px;}
-#banner #ban #slide{width:100%; height:350px;background:#F00;position:relative;overflow:hidden;}
-
+#banner #ban #slide{width:100%; height:350px;position:relative;overflow:hidden;}
+#banner #ban #slide #wrap{width: 100%;height: 350px;position: absolute;left: 0;}
+#banner #ban #slide #wrap>li,#banner #ban #slide #wrap>li img{width: 100%;height:350px;}
+#banner #ban #slide #wrap>li {transition :opacity 1s;position: absolute;}
+    
+#banner #ban #slide  #btn{z-index: 9;height: 20px;position: absolute;bottom: 1%;left:50%;margin-left: -50px;cursor: pointer;}
+#banner #ban #slide #btn>li{width:20px;height: 100%;margin:0 5px;float: left;border-radius: 50%;}
+#banner #ban #slide  .fff{background: #fff;}
+#banner #ban #slide .orange{background: #f60;}
+       
+#banner #ban #slide #wrap span{position: absolute;top:50%;display: block;width :50px;height: 80px;background:#242424;margin-top:-40px;z-index: 23;color: #fff;font-size: 30px;line-height: 80px;text-align: center;cursor: pointer;display: none;}
+#banner #ban #slide  #left{ width:50px; height:80px; position:absolute;left:0;top:30%;font-size:50px;color:#f60;font-weight:bolder; background:rgba(255,255,255,0.8); display:none}
+#banner #ban #slide  #right{width:50px; height:80px; position:absolute;right:0;top:30%;font-size:50px;color:#f60;font-weight:bolder; background:rgba(255,255,255,0.8); display:none}
 #banner #ban #list{width:100%;height:142px;}
 #banner #ban #list div{margin-left:30px;padding-left:1px;border:1px solid #ccc}
 /*====con======*/

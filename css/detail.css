@@ -178,16 +178,29 @@ a:hover{texr-decoration:none;color:#f60;}
 #con #con3 .left .down .hotpic .hot1{ font-size:14px; color:#ff8746; position:absolute;top:199px; left:7px}
 #con #con3 .left .down .hotpic .hot2{position:absolute;top:199px; left:141px; border:1px solid #ccc;padding:3px}
 #con #con3 .left .down .last{border:0}
-#con #con3 .right{ width:950px; overflow:hidden; border:1px solid #ccc; margin-left:10px;margin-top:10px}
-#con #con3 .right  ul{ width:100%; height:50px; font-size:18px; line-height:50px; text-align:center; background:#f9f9f9; border-bottom:1px solid #ccc;}
-#con #con3 .right  ul  li{ border-right:1px solid #ccc;width:120px; height:100%;}
-#con #con3 .right  ul  li.on{ background:#fff}
-#con #con3 .right  div { width:100%; overflow:hidden;}
-#con #con3 .right  div img{padding:20px 20px; margin-left:5px}
-#con #con3 .right  div img.pics{margin-left:64px}
+#con #con3 .right{ width:950px; overflow:hidden; /*border:1px solid #ccc;*/ margin-left:10px;margin-top:10px}
+#con #con3 .right  ul{ position:relative;width:949px; height:50px; font-size:18px; line-height:50px; text-align:center; background:#f9f9f9; border-bottom:1px solid #ccc; border-top:1px solid #ccc; /*border-left:1px solid #ccc; border-right:1px solid #ccc;*/}
+#con #con3 .right  ul.select  li{/* border-right:1px solid #ccc;*/width:120px; height:100%;margin-bottom:20px}
+#con #con3 .right  ul.select  li.on{ background:#fff}
+#con #con3 .right div.father{width:100%; overflow:hidden}
+#con #con3 .right  div.one {position:absolute;top:912px; width:100%; overflow:hidden;/* z-index:20*/display:none}
+#con #con3 .right  div.one img{padding:20px 20px; margin-left:5px;}
+#con #con3 .right  div.one img.pics{margin-left:64px;}
 
+#con #con3 .right  div.two {position:absolute;top:912px; width:75%; border:1px solid #f00;height:800px;  overflow:hidden;display:none}
+#con #con3 .right  div.two  ul.texts{width:100%; overflow:hidden;}
+#con #con3 .right  div.two  ul.texts li{width:100%; border-bottom:1px dashed #ccc}
 
+#con #con3 .right  div.three{position:absolute;top:912px; width:908px; border:1px solid #ccc;  overflow:hidden;padding:20px;display:none}
 
+#con #con3 .right  div.four{position:absolute;top:912px; width:908px; border:1px solid #ccc;  overflow:hidden;padding:20px; display:none}
+#con #con3 .right  div.four b{ background:#ffe9e9; color:#d52659;display:block;width:96%}
+#con #con3 .right  div.four p{width:100%}
+#con #con3 .right  div.four span{color:#f00}
+
+#con #con3 .right  div.five{position:absolute;top:912px; width:908px; border:1px solid #ccc;  overflow:hidden;padding:20px; display:none}
+
+#con #con3 .right  div.six{position:absolute;top:912px; width:908px; border:1px solid #ccc;  overflow:hidden;padding:20px;/* display:none*/}
 /*========footer=========*/
 
 
