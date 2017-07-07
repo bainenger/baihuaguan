@@ -1,0 +1,167 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>注册</title>
+<link rel="stylesheet" type="text/css" href="../css/login.css"/>
+</head>
+
+<body>
+
+<!-----------nav--------------->
+<div id="nav">
+    	<div class="w">
+        <ul class="l ">
+            <li class="l one" ><a href="#"><img src="../images/list/pic1.png">关注网上送花订花微信</a></li> 
+        </ul>
+         <ul class="r  navs">   
+            <li class="l" ><a href="../index.html">百花馆鲜花店首页</a></li>
+            <li class="l" ><a href="entry.html">登录 </a></li>
+            <li class="l" ><a href="#">注册 </a></li>
+            <li class="l last" ><a href="shoppingcar.html"><img src="../images/list/pic2.png"><span>我的购物车</span></a></li>
+            <!--<li class="l" ><a href="#"><img src="../images/list/pic3.png"><span>订单查询</span></a></li>
+            <li class="l" ><a href="#"><img src="../images/list/pic4.png"><span>在线补款</span></a></li>
+            <li class="l last" ><a href="#"><img src="../images/list/pic5.png"><span>意见建议</span></a></li>-->
+    	</ul>
+    	</div>
+</div>
+<!-----------header----------------->
+<div id="header">
+	<div class="w">
+    	<ul class="pic"><li><img src="../images/index/baihuagian_log.jpg"></li></ul>
+        <ul class="r">
+        	<li class="l"><img src="../images/list/pic6.png" class="l"><span class="l one">16年品牌鲜花店<br/><b>16年品质口碑，年销200万束</b></span></li>
+        	<li class="l two"><img src="../images/list/pic7.png" class="l"><span class="l two">最快1小时送花上门<br/><b>准时送花上门，省时又省心</b></span></li>
+        	<li class="l last"><img src="../images/list/pic8.png" class="l"><span class="l three">200%退赔承诺<br/><b>任何质量问题均2倍赔偿</b></span></li>
+         
+        </ul>
+    </div>
+</div>
+<!-----------con----------------->
+<div id="con">
+	<img src="../images/list/2017-06-25_142419.png" class="l">
+    <div id="box" class="l">
+    	<h1>注册</h1>
+    	<div class="finish">
+        	<form action="login.php" method="post" id="froms">
+        	  <input type="text" placeholder="请输入您的用户名" class="one" name="userPhone" id="username"><p id="one" class="l"></p><br/>
+        	  <input type="text" placeholder="输入验证码" class="two" name="userYZM" id="userYZM"><p id="two" class="l"></p><br/>
+            <a href="#" class="l yzm" id="yzm">获取验证码</a><b id="showYzm" class="l"></b>
+        	  <input type="password" placeholder="请输入密码，至少6位字符" class="three" name="userPass" id="userPASS"><p id="three" class="l"></p><br/>
+        	  <input type="password" placeholder="请输入确认密码" class="three" name="userPass" id="userpass"><p id="four" class="l"></p><br/>
+           <input type="checkbox" class="lasts l"><span class="l one">我已阅读并同意<a href="#">《百花馆鲜花店用户注册协议》</a>&nbsp;&nbsp;<a href="#"><a href="entry.html">直接登录</a></a></span>
+		    <input type="submit" value="立即注册" class="go">
+            </form>
+        </div>
+    </div>
+</div>
+
+
+<!-----------footer--------------->
+<footer>
+        <ul class="nav">
+        	<li><a>首页</a></li>
+        	<li><a>联系我们</a></li>
+        	<li><a>关于我们</a></li>
+        	<li><a>快捷支付</a></li>
+        	<li><a>在线补款</a></li>
+        	<li><a>配送说明</a></li>
+        	<li><a>发票说明</a></li>
+        	<li><a>售后服务</a></li>
+        	<li><a  class="last">服务声明</a></li>
+        </ul>
+		<div class="last">
+        	<p>客服中心电话: 400-699-3230 鲜花配送时间 9:00-20:00 客服中心留言回复时间 8:00-24:00
+</p>
+            <p>&copy;2005-2017 南京上多川进出口贸易有限公司 www.baihuaguan.com All rights reserved 16年本地鲜花销量领先-版权所有</p>
+        </div>
+</footer>
+</body>
+</html>
+<script type="text/javascript" src="../js/tools.js" ></script>
+<script>
+	$("yzm").onclick=function(){
+		var num;
+		var str="";
+		while(true){
+			num=parseInt(Math.random()*123);
+			if(num>=97 && num<=122){
+				str+=String.fromCharCode(num);
+			}
+			if(num>=65 && num<=90){
+				str+=String.fromCharCode(num);
+			}
+			if(num>=0 && num<=9){
+				str+=num.toString();
+			}
+			if(str.length>=6){
+				break;
+			}
+		}
+		$("showYzm").innerHTML=str;
+		
+	}
+	
+	
+
+
+   
+	$("username").onblur=function(){
+	    if(checkAll('username',$("username").value)){
+		   	$("one").innerHTML="✔";
+		}else if($("username").value==""){
+				$("one").innerHTML="请填写用户名";	 
+		}
+		else{
+		$("one").innerHTML="用户名格式不正确";
+		}		
+	}
+	$("userYZM").onblur=function(){
+	    if(($("userYZM").value==$("showYzm").innerHTML)&&($("userYZM").value!="")){
+		   	$("two").innerHTML="✔";	   
+		}else if($("userYZM").value==""){
+				$("two").innerHTML="请填写验证码";	 
+		}
+		else{
+		$("two").innerHTML="验证码错误";
+		}		
+	}
+	
+	$("userPASS").onblur=function(){
+	    if(checkAll('userPASS',$("userPASS").value)){
+		   	$("three").innerHTML="✔";
+		}else if($("userPASS").value==""){
+				$("three").innerHTML="请填写密码";	 
+		}
+		else{
+		$("three").innerHTML="密码格式错误";
+		}		
+	}
+	
+	$("userpass").onblur=function(){
+	    if(($("userpass").value==$("userPASS").value)&&($("userpass").value!="")){
+		   $("four").innerHTML="✔";
+		}else if($("userpass").value==""){
+				$("four").innerHTML="请再次输入密码";	 
+		}
+		else{
+		$("four").innerHTML="两次密码不一致";
+		}		
+	}	
+	
+	/*$("forms").onsubmit=function(){	
+		for(var j in arr1){
+			if(arr1[j]==1||arr1[j]==0){
+					alert("有信息不正确或未完成，请重新填写");
+					var allInput  =document.getElementsByTagName("input");
+					for(var i in allInput){
+					   allInput[i].value="";	   
+				    }
+				return false;
+			}else if(arr2[j]==0){
+			        return true;
+			}	
+		}	
+	};*/
+
+</script>

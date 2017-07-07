@@ -1,0 +1,139 @@
+@charset "utf-8";
+/* CSS Document */
+/*=====样式重置=====*/
+body,ul,li,ol,dl,dt,dd,h1,h2,h3,h4,h5,h6,a,img,input{padding:0;margin:0;}
+ul,ol{list-style:none;}
+img{border:0;display:block;}
+body{font-size:12px;color:#3e3e3e;font-family:"微软雅黑";}
+a{text-decoration:none;color:#000;}
+a:hover{texr-decoration:none;color:#f60;}
+/*======公共样式=====*/
+.w{width:1200px;margin:0 auto;}
+.l{float:left;}
+.r{float:right;}
+*{cursor:pointer}
+/*=======aside====*/
+#aside{cursor:pointer}
+#aside #box1{width:114px;position:fixed ;right:0;top:20%;z-index:2;/*display:none*/}
+#aside #box1 span{z-index:8;width:20px;height:20px; line-height:20px;text-align:center; /*background:#000;*/color:#fd8247;font-size:18px;position:absolute;right:0;top:0;}
+#aside #box2{z-index:1;position:fixed ;right:0;top:44%;/*display:none*/}
+/*=======help====*/
+#help{ cursor:pointer;width:450px; height:250px;position:fixed;top:30%;left:30%;display:none;z-index:1;} 
+#help span{color:#fff;font-size:20px;position:fixed;top:30%;left:64%;/*display:none*/}
+
+/*=====header=====*/
+#header{width:100%; height:96px; margin-top:20px}
+#header h1{width:230px; height:74px}
+#header .search{width:550px; height:100%;margin-left:40px}
+#header .search  .sea{ position:relative}
+#header .search  .sea input{ width:380px; height:30px;border:2px solid #fd8a49;border-radius:6px; padding:4px 30px}
+#header .search  .sea img{ position:absolute;top:12px;left:8px}
+#header .search  .sea span{/*width:40px; height:30px;*/ background:#fd8a49;padding:12px 20px; position:absolute; left:379px; top:1px;border-radius:0 6px 6px 0}
+#header .search ul li{margin-right:6px}
+#header .search .telphone{width:286px; height:96px; line-height:96px; position:relative;}
+#header .search .telphone span.one img{ width:49px; height:49px; margin-right:10px}
+/*=====nav=====*/
+#nav{width:100%;height:50px; line-height:50px;background:#fd8247;}
+#nav ul{width:100%;height:50px;line-height:50px;/* text-align:center;*/}
+#nav ul li{width:100px; display:inline-block;text-align:center;margin-right:2px;font-size:16px;}
+#nav ul li.on{ background:#ed810c; width:200px}
+#nav ul li.on:hover{width:200px;}
+#nav ul li:hover{ background:#ed810c;width:100px; height:50px}
+#nav ul li.last{ position:relative}
+#nav ul li.last img{ position:absolute; top:0px; left:50px}
+#nav ul li a{color:#fff;}
+#nav ul li.car{width:195px; height:29px; background:#fff; border-radius:5px;/* position:absolute;top:-30px;*/ margin-top:10px}
+#nav ul li.car{ font-size:12px;}
+#nav ul li.car img{margin-left:5px;margin-top:4px;}
+#nav ul li.car a{ color:#777777;margin-top:-10px; margin-left:20px}
+#nav ul li.car a:hover{color:#fd8247}
+
+/*====banner======*/
+#banner{width:100%; height:547px; background:url(../images/detail/2017-07-06_184623.png)}
+
+/*====con======*/
+#con{width:100%; overflow:hidden;}
+#con #con1{width:100%; overflow:hidden}
+#con #con1 div.head{width:100%; height:58px; background:url(../images/detail/bt_1.jpg); margin: 30px auto 0 auto;}
+#con #con1 div.head p{ text-align:center;font-size:16px;}  
+#con #con1 div.head p span{ display:block; font-size:24px;color:#4b4b4b;font-variant: small-caps;}
+#con #con1 div.content{width:100%; height:543px; }
+#con #con1 div.content div.left{width:471px; height:100%; background:url(../images/detail/bk1_3.png) #fbfcff no-repeat; margin-right:170px; position:relative}
+#con #con1 div.content div.left span{ position:absolute}
+#con #con1 div.content div.left span.one{top:442px; left:20px;font-size:18px}
+#con #con1 div.content div.left span.two{top:470px; left:20px;font-size:28px}
+#con #con1 div.content div.left span.three{top:510px; left:20px;font-size:20px;color:#868485}
+#con #con1 div.content div.left span.three b{font-size:16px;font-weight:100; text-decoration:line-through}
+#con #con1 div.content div.left span.four{top:501px; left:340px;font-size:20px;color:#868485; border:1px solid #868485; padding:5px 20px}
+
+#con #con1 div.content div.right{width:493px; height:100%; background:url(../images/detail/bk1_1.jpg) no-repeat; position:relative;color:#868485}
+#con #con1 div.content div.right .text{ position:absolute;left:300px; font-size:14px; top:30px}
+#con #con1 div.content div.right img{ position:absolute;top:364px; left:375px}
+#con #con1 div.content div.right  span{ position:absolute;top:410px;left:348px; font-size:18px}
+
+
+
+#con #con2{width:100%;  overflow:hidden}
+#con #con2 div.head{width:100%; height:58px; background:url(../images/detail/bt_1.jpg); margin: 30px auto 0 auto;}
+#con #con2 div.head p{ text-align:center;font-size:16px;}  
+#con #con2 div.head p span{ display:block; font-size:24px;color:#4b4b4b;font-variant: small-caps;}
+#con #con2 div.content{width:100%; height:581px;}
+#con #con2 div.content div.left{width:494px; height:100%; background:url(../images/detail/bk2_1.jpg) no-repeat;  position:relative;color:#868485;margin-right:150px;}
+#con #con2 div.content div.left .text{ position:absolute;left:20px;top:28px; font-size:14px; width:240px}
+#con #con2 div.content div.left img{ position:absolute;top:364px; left:122px}
+#con #con2 div.content div.left  span{ position:absolute;top:410px;left:90px; font-size:18px}
+
+#con #con2 div.content div.right{width:480px; height:640px; background:url(../images/detail/bk2_3.png) #fbfcff no-repeat;  position:relative; }
+#con #con2 div.content div.right span{ position:absolute}
+#con #con2 div.content div.right span.one{top:510px; left:20px;font-size:18px}
+#con #con2 div.content div.right span.two{top:540px; left:20px;font-size:28px}
+#con #con2 div.content div.right span.three{top:580px; left:20px;font-size:20px;color:#868485}
+#con #con2 div.content div.right span.three b{font-size:16px;font-weight:100; text-decoration:line-through}
+#con #con2 div.content div.right span.four{top:580px; left:340px;font-size:20px;color:#868485; border:1px solid #868485; padding:5px 20px}
+
+
+#con #con3{width:100%;  overflow:hidden}
+#con #con3 div.head{width:100%; height:58px; background:url(../images/detail/bt_1.jpg); margin: 30px auto 0 auto;}
+#con #con3 div.head p{ text-align:center;font-size:16px;}  
+#con #con3 div.head p span{ display:block; font-size:24px;color:#4b4b4b;font-variant: small-caps;}
+#con #con3 div.content{width:100%; height:511px; }
+#con #con3 div.content div.left{width:479px; background:
+url(../images/detail/bk3_7.jpg) no-repeat; height:100%; margin-right:170px; position:relative}
+#con #con3 div.content div.left span{ position:absolute}
+#con #con3 div.content div.left span.one{top:260px; left:33px;font-size:30px;}
+#con #con3 div.content div.left span.two{top:307px; left:20px;font-size:20px;color:#868485}
+#con #con3 div.content div.left span.two b{font-size:18px; font-weight:100;text-decoration:line-through}
+#con #con3 div.content div.right{width:480px; height:640px; background:url(../images/detail/bk3_1.jpg) no-repeat;  position:relative;}
+
+
+#con #con4{width:100%; overflow:hidden}
+#con #con4 ul.pics1{width:100%; overflow:hidden}
+#con #con4 ul.pics1 li.pic1{ background:url(../images/detail/bk3_11.png) #FBFCFE no-repeat; width:382px; height:510px;position: relative;margin-right:18px;margin-bottom:10px}
+#con #con4 ul.pics1 li.pic1 span{ position:absolute;}
+#con #con4 ul.pics1 li.pic1 span.one{top:395px; left:20px; font-size:30px}
+#con #con4 ul.pics1 li.pic1 span.two{top:448px; left:20px; font-size:18px}
+#con #con4 ul.pics1 li.pic1 span.two b{font-size:16px;font-weight:100; text-decoration:line-through}
+#con #con4 ul.pics1 li.pic1 span.three{top:448px; left:200px; font-size:18px;border:1px solid #868485; padding:5px 20px}
+
+#con #con4 ul.pics1 li.er{ background:url(../images/detail/bk3_9.png) #FBFCFE no-repeat; }
+#con #con4 ul.pics1 li.san{ background:url(../images/detail/bk3_10.png) #FBFCFE no-repeat; }
+#con #con4 ul.pics1 li.si{ background:url(../images/detail/bk3_8.png) #FBFCFE no-repeat; }
+#con #con4 ul.pics1 li.wu{ background:url(../images/detail/bk3_12.png) #FBFCFE no-repeat; }
+#con #con4 ul.pics1 li.lu{ background:url(../images/detail/bk3_13.png) #FBFCFE no-repeat; }
+
+#con #con5{width:100%; overflow:hidden;margin-top:50px} 
+#con #con5 .left{ background:url(../images/detail/bk3_2.jpg) #fbfcff no-repeat; width:652px;height:431px;}
+#con #con5 .right{ background:url(../images/detail/bk3_3.jpg)  no-repeat; width:548px;height:313px;}
+
+
+#con #con6{width:100%; overflow:hidden;margin-top:50px} 
+#con #con6 .left{ background:url(../images/detail/bk3_3.jpg) no-repeat; width:544px;height:313px;}
+#con #con6 .right{ background:url(file:///D|/baihuaguan/images/detail/bk3_6.jpg) #fbfcff no-repeat; width:656px;height:417px;}
+
+#con p.more{margin:0 auto; font-size:30px; border:1px solid #ccc; padding:5px 20px; width:250px;text-align:center;margin-top:50px}
+/*========footer=========*/
+footer{width:100%; height:358px; background:url(../images/detail/bottom.jpg);margin-top:50px}
+
+
+
+
