@@ -21,7 +21,7 @@
 <div id="nav">
     	<div class="w">
         <ul class="l ">
-            <li class="l " ><a href="#">欢迎来到百花馆鲜花店!</a></li>
+            <li class="l " ><a href="#"  id="entry">欢迎来到百花馆鲜花店!</a></li>
             <li class="l"><a href="#"><img src="images/index/phone.jpg"></a></li>
             <li class="l num"><a href="#">4000-518-210</a></li>
             <li class="l last" >
@@ -61,9 +61,9 @@
         <div id="ban" class="l">
         	<div id="slide">
             	<ul id="wrap">
-                	<li style="z-index:8"><img  src="images/index/1.jpg"></li>
-                	<li><img src="images/index/2.jpg"></li>
-                	<li><img src="images/index/3.jpg"></li>
+                	<li style="z-index:8"><img  src="images/index/1.jpg" id="lunbo0"></li>
+                	<li><img src="images/index/2.jpg" id="lunbo1"></li>
+                	<li><img src="images/index/3.jpg" id="lunbo2"></li>
                 </ul>
                 <ul id="btn">
                 	<li class="orange"></li>
@@ -330,62 +330,72 @@
 </footer>
 </body>
 </html>
-<script src="js/tools.js"></script>
+<script type="text/javascript" src="js/tools.js" ></script>
+<script type="text/javascript" src="js/jquery-1.8.3.min.js" ></script>
+<script type="text/javascript" src="js/cookieTools.js" ></script>
+<script type="text/javascript">
+		$(function(){
+			var str = getCookie("userName");			
+			if(str!=""){				
+				$("#entry").text(str+",欢迎来到鲜花馆");
+			}
+		});	
+</script>
 <script type="text/javascript">
 	var timer=null;
 	window.onload=function(){
-		$("close").onmousedown=function(){			
-			$("box1").style.right="-114px";
-			$("close").style.display="none";
+		$i("close").onmousedown=function(){			
+			$i("box1").style.right="-114px";
+			$i("close").style.display="none";
 		};
-		$("box2").onmousedown=function(){			
-			move($("box1"),0,"right");
-			$("close").style.display="block";	
+		$i("box2").onmousedown=function(){			
+			move($i("box1"),0,"right");
+			$i("close").style.display="block";	
 		}
 		timer=setInterval(function(){
-			$("help").style.display="block"
+			$i("help").style.display="block"
 			},2000);
-		$("close1").onmousedown=function(){			
+		$i("close1").onmousedown=function(){			
 			clearInterval(timer);
-			$("help").style.display="none";
+			$i("help").style.display="none";
 		};	
 	};
 	
 	
 	
 	 
-       var btn = $("btn").children;//获取底部圆圈
+       var btn = $i("btn").children;//获取底部圆圈
       
        /* 右按钮*/
       var num = 0;
    
-       $("right").onclick = function(){
+       $i("right").onclick = function(){
        	     num++;   
-       	     if(num>= $("wrap").children.length){
+       	     if(num>= $i("wrap").children.length){
        	     	num=0;
        	     }
-       	   for (var j=0;j<$("wrap").children.length;j++) {
-       	   	 	 $("wrap").children[j].style.opacity =0;
+       	   for (var j=0;j<$i("wrap").children.length;j++) {
+       	   	 	 $i("wrap").children[j].style.opacity =0;
      		}
-       	     $("wrap").children[num].style.opacity =1;
+       	     $i("wrap").children[num].style.opacity =1;
        	     /*圆按钮*/
-           for (var j =0;j<$("wrap").children.length;j++) {
+           for (var j =0;j<$i("wrap").children.length;j++) {
      			btn[j].className="fff";
      		}
      		btn[num].className="orange";
        }
          /* 左按钮*/
-       $("left").onclick = function(){
+       $i("left").onclick = function(){
        	   num--;
        	  if(num<0){
-       	     	num=$("wrap").children.length-1;
+       	     	num=$i("wrap").children.length-1;
        	     }
-       	   for (var j =0;j<$("wrap").children.length;j++) {
-       	   	 	 $("wrap").children[j].style.opacity =0;
+       	   for (var j =0;j<$i("wrap").children.length;j++) {
+       	   	 	 $i("wrap").children[j].style.opacity =0;
      		}
-       	     $("wrap").children[num].style.opacity =1;
+       	     $i("wrap").children[num].style.opacity =1;
        	        /*元按钮*/
-           for (var j =0;j<$("wrap").children.length;j++) {
+           for (var j =0;j<$i("wrap").children.length;j++) {
      			btn[j].className="fff";
      		}
      		btn[num].className="orange";
@@ -396,28 +406,39 @@
      	btn[0].className="orange";
      	btn[i].index = i;
      	btn[i].onmouseover = function(){
-     		for (var j =0;j<$("wrap").children.length;j++) {
+     		for (var j =0;j<$i("wrap").children.length;j++) {
      			btn[j].className="fff";
-     			 $("wrap").children[j].style.opacity =0;
+     			 $i("wrap").children[j].style.opacity =0;
      		}
      		btn[this.index].className="orange";
-    		  $("wrap").children[this.index].style.opacity =1; 
+    		  $i("wrap").children[this.index].style.opacity =1; 
      	}
      }
     /*让轮播图自己走，设置定时器*/
     var time = null;  
-   time = setInterval($("right").onclick,2000)
+   time = setInterval($i("right").onclick,2000)
     
     /* 左右按钮的显示与隐藏*/
-       $("slide").onmouseover= function(){
-       	  $("left").style.display = "block";
-       	  $("right").style.display = "block";
+       $i("slide").onmouseover= function(){
+       	  $i("left").style.display = "block";
+       	  $i("right").style.display = "block";
        	  clearInterval(time)
        	};
-       $("slide").onmouseout = function(){
-       	  $("left").style.display = "none";
-       	  $("right").style.display = "none";
+       $i("slide").onmouseout = function(){
+       	  $i("left").style.display = "none";
+       	  $i("right").style.display = "none";
        	  clearInterval(time)
-        time = setInterval($("right").onclick,2000);
+        time = setInterval($i("right").onclick,2000);
        };
+</script>
+<script type="text/javascript">
+	$("#lunbo0").click(function(){
+		location.href="html/list.html";		
+	})
+	$("#lunbo1").click(function(){
+		location.href="html/list.html";		
+	})
+	$("#lunbo2").click(function(){
+		location.href="html/active2.html";		
+	})
 </script>

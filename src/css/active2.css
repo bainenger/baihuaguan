@@ -128,7 +128,7 @@ url(../images/detail/bk3_7.jpg) no-repeat; height:100%; margin-right:170px; posi
 
 #con #con6{width:100%; overflow:hidden;margin-top:50px} 
 #con #con6 .left{ background:url(../images/detail/bk3_3.jpg) no-repeat; width:544px;height:313px;}
-#con #con6 .right{ background:url(file:///D|/baihuaguan/images/detail/bk3_6.jpg) #fbfcff no-repeat; width:656px;height:417px;}
+#con #con6 .right{ background:url(../images/detail/bk3_6.jpg) #fbfcff no-repeat; width:656px;height:417px;}
 
 #con p.more{margin:0 auto; font-size:30px; border:1px solid #ccc; padding:5px 20px; width:250px;text-align:center;margin-top:50px}
 /*========footer=========*/

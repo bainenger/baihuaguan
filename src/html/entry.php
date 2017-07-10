@@ -11,5 +11,5 @@
 		$rowCount = mysql_num_rows($result);
 		mysql_close($con);
 		echo $rowCount;
-				
+		}				
 ?>

@@ -1,11 +1,5 @@
 // JavaScript Document
 
-function $i(id){
-		return document.getElementById(id);
-	}
-	
-	
-	
 	function getStyle(obj,attrName){
 		if(obj.currentStyle){
 			return obj.currentStyle[attrName];

@@ -47,7 +47,7 @@
                 <li class="two" id="mess">手机短信快捷登录</li>
             </ul>
             <div class="num" id="num">
-          <input type="text" placeholder="请输入用户名" class="one" id="userId"><br/>
+          <input type="text" placeholder="请输入用户名" class="one" id="userId"><span id="spans"></span><br/>
           <input type="password" placeholder="密码" id="passId"><br/>
           <span id="errmsg" ></span>
      <!--     <input type="text" placeholder="验证码" class="last">-->
@@ -92,6 +92,7 @@
 </body>
 </html>
 <script type="text/javascript" src="../js/jquery-1.8.3.min.js" ></script>
+<script type="text/javascript" src="../js/cookieTools.js" ></script>
 <script type="text/javascript">
 		$("#mess1").css("display","none");
 		$("#mess").click(function(){
@@ -109,20 +110,36 @@
 </script>
 
 <script type="text/javascript">
-$("#btnLogin").click(function(){
-	$.ajax({
-		url:"entry.php",
-		async:true,
-		data:"userName="+$('#userId').val()+"&userPass="+$("#passId").val(),
-		type:"post",
-		success:function(data){
-			if(data=="1"){
-				//保存cookie
-				location.href="../index.html";
-			}else{
-				$("#errmsg").html("亲，用户名或者密码错误，登录失败，请想好再输！");
-			}
-		}		
-	});	
-});	
+	$("#userId").blur(function(){
+		$.ajax({
+				url:"checkUser.php",
+				async:true,
+				data:"userName="+$('#userId').val(),
+				type:"get",
+				success:function(data){
+					if(data=="1"){
+						$("#spans").html("✔");
+					}else{
+						$("#spans").html("用户名不存在");
+					}
+				}		
+			});
+		
+	});
+	$("#btnLogin").click(function(){
+		$.ajax({
+				url:"entry.php",
+				async:true,
+				data:"userName="+$('#userId').val()+"&userPass="+$("#passId").val(),
+				type:"post",
+				success:function(data){
+					if(data=="1"){
+						saveCookie("userName","欢迎"+$("#userId").val(),7);
+						location.href="../index.html";
+					}else{
+						$("#errmsg").html("亲，用户名和密码不匹配，请重新输入！");						
+					}
+				}		
+			});	
+		});	
 </script>

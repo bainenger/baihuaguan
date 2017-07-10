@@ -156,6 +156,7 @@
         <div id="con5">
         	<div class="left l"></div>
         	<div class="right l"></div>
+        	<b>HAPPY&nbsp;&nbsp;&nbsp;EVERY&nbsp;&nbsp;&nbsp;DAY</b>
         </div>
         <div id="con6">
         	<div class="left l"></div>
@@ -175,20 +176,20 @@
 <script type="text/javascript">
 	var timer=null;
 	window.onload=function(){
-		$("close").onmousedown=function(){			
-			$("box1").style.right="-114px";
-			$("close").style.display="none";
+		$i("close").onmousedown=function(){			
+			$i("box1").style.right="-114px";
+			$i("close").style.display="none";
 		};
-		$("box2").onmousedown=function(){			
-			move($("box1"),0,"right");
-			$("close").style.display="block";	
+		$i("box2").onmousedown=function(){			
+			move($i("box1"),0,"right");
+			$i("close").style.display="block";	
 		}
 		timer=setInterval(function(){
-			$("help").style.display="block"
+			$i("help").style.display="block"
 			},2000);
-		$("close1").onmousedown=function(){			
+		$i("close1").onmousedown=function(){			
 			clearInterval(timer);
-			$("help").style.display="none";
+			$i("help").style.display="none";
 		};
 		
 	};

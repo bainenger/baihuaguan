@@ -43,12 +43,12 @@
     <div id="box" class="l">
     	<h1>注册</h1>
     	<div class="finish">
-        	<form action="login.php" method="post" id="froms">
-        	  <input type="text" placeholder="请输入您的用户名" class="one" name="userPhone" id="username"><p id="one" class="l"></p><br/>
+        	<form action="login.php" method="post">
+        	  <input type="text" placeholder="请输入您的用户名" class="one" name="userName" id="username"><p id="one" class="l"></p><br/>
         	  <input type="text" placeholder="输入验证码" class="two" name="userYZM" id="userYZM"><p id="two" class="l"></p><br/>
             <a href="#" class="l yzm" id="yzm">获取验证码</a><b id="showYzm" class="l"></b>
         	  <input type="password" placeholder="请输入密码，至少6位字符" class="three" name="userPass" id="userPASS"><p id="three" class="l"></p><br/>
-        	  <input type="password" placeholder="请输入确认密码" class="three" name="userPass" id="userpass"><p id="four" class="l"></p><br/>
+        	  <input type="password" placeholder="请输入确认密码" class="three"  id="userpass"><p id="four" class="l"></p><br/>
            <input type="checkbox" class="lasts l"><span class="l one">我已阅读并同意<a href="#">《百花馆鲜花店用户注册协议》</a>&nbsp;&nbsp;<a href="#"><a href="entry.html">直接登录</a></a></span>
 		    <input type="submit" value="立即注册" class="go">
             </form>
@@ -78,9 +78,10 @@
 </footer>
 </body>
 </html>
-<script type="text/javascript" src="../js/tools.js" ></script>
+<script type="text/javascript" src="../js/tool.js" ></script>
+<script type="text/javascript" src="../js/jquery-1.8.3.min.js" ></script>
 <script>
-	$("yzm").onclick=function(){
+	$("#yzm").click(function(){
 		var num;
 		var str="";
 		while(true){
@@ -98,70 +99,106 @@
 				break;
 			}
 		}
-		$("showYzm").innerHTML=str;
+		$("#showYzm").html(str);
 		
-	}
+	})
 	
 	
 
-
+ var arr1=[0,0,0,0];
+ /*var arr2=[1,1,1,1];*/
    
-	$("username").onblur=function(){
-	    if(checkAll('username',$("username").value)){
-		   	$("one").innerHTML="✔";
-		}else if($("username").value==""){
-				$("one").innerHTML="请填写用户名";	 
-		}
-		else{
-		$("one").innerHTML="用户名格式不正确";
+	$("#username").blur(function(){
+	    if(checkAll('username',$("#username").val())){
+		   	$("#one").html("✔");
+		   	arr1[0]=0;
+		}else if($("#username").val()==""){
+				$("#one").html("请填写用户名");	
+				 arr1[0]=1;
+		}else{
+			$("#one").html("用户名格式不正确");
+			 arr1[0]=1;
 		}		
-	}
-	$("userYZM").onblur=function(){
-	    if(($("userYZM").value==$("showYzm").innerHTML)&&($("userYZM").value!="")){
-		   	$("two").innerHTML="✔";	   
-		}else if($("userYZM").value==""){
-				$("two").innerHTML="请填写验证码";	 
-		}
-		else{
-		$("two").innerHTML="验证码错误";
-		}		
-	}
+	})
 	
-	$("userPASS").onblur=function(){
-	    if(checkAll('userPASS',$("userPASS").value)){
-		   	$("three").innerHTML="✔";
-		}else if($("userPASS").value==""){
-				$("three").innerHTML="请填写密码";	 
+	$("#username").blur(function(){
+		if($("#one").html=="✔"){
+			$.ajax({
+			url:"checkUser.php",
+			async:true,
+			data:"userName="+this.value,
+			type:"get",
+			success:function(data){
+				if(data=="1"){
+					$("#one").html("该用户已注册");
+						arr1[0]=1;
+					}else{
+						$("#one").html("该用户OK");
+						arr1[0]=2;
+				}
+			}		
+		});}	
+	});
+	
+	
+
+	$("#userYZM").blur(function(){
+	    if(($("#userYZM").val()==$("#showYzm").html())&&($("#userYZM").val()!="")){
+		   	$("#two").html("✔");	 
+		   		arr1[1]=2;
+		}else if($("#userYZM").val()==""){
+				$("#two").html("请填写验证码");	
+				arr1[1]=1;
 		}
 		else{
-		$("three").innerHTML="密码格式错误";
+			$("#two").html("验证码错误");
+			arr1[1]=1;
 		}		
-	}
+	})
 	
-	$("userpass").onblur=function(){
-	    if(($("userpass").value==$("userPASS").value)&&($("userpass").value!="")){
-		   $("four").innerHTML="✔";
-		}else if($("userpass").value==""){
-				$("four").innerHTML="请再次输入密码";	 
+	$("#userPASS").blur(function(){
+	    if(checkAll('userPASS',$("#userPASS").val())){
+		   	$("#three").html("✔");
+		   		arr1[2]=2;
+		}else if($("#userPASS").val()==""){
+				$("#three").html("请填写密码");	
+				arr1[2]=1;
 		}
 		else{
-		$("four").innerHTML="两次密码不一致";
+			$("#three").html("密码格式错误");
+			arr1[2]=1;
 		}		
-	}	
+	})
 	
-	/*$("forms").onsubmit=function(){	
+	$("#userpass").blur(function(){
+	    if(($("#userpass").val()==$("#userPASS").val())&&($("#userpass").val()!="")){
+		   $("#four").html("✔");
+		   	arr1[3]=2;
+		}else if($("#userpass").val()==""){
+				$("#four").html("请再次输入密码");
+				arr1[3]=1;
+		}
+		else{
+			$("#four").html("两次密码不一致");
+			arr1[3]=1;
+		}		
+	})	
+	
+	$("form").submit(function(){	
 		for(var j in arr1){
 			if(arr1[j]==1||arr1[j]==0){
 					alert("有信息不正确或未完成，请重新填写");
-					var allInput  =document.getElementsByTagName("input");
+					/*var allInput=$("input");
 					for(var i in allInput){
 					   allInput[i].value="";	   
-				    }
+				    }*/
+					
 				return false;
-			}else if(arr2[j]==0){
-			        return true;
+			}else if(arr1[j]==2){
+				
+			   return true;
 			}	
 		}	
-	};*/
+	})
 
 </script>

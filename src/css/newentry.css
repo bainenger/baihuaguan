@@ -44,7 +44,7 @@ b{font-weight:100}
 /*=====con=====*/
 #con{margin-top:100px;}
 #con #box{width:446px;height:520px; background:#f7286e}
-#con #box .finish{width:350px;height:400px; background:#fff;margin:55px auto}
+#con #box .finish{width:350px;height:400px; background:#fff;margin:55px auto;position:relative;}
 #con #box .finish ul{width:100%; height:50px; line-height:50px;text-align:center}
 #con #box .finish ul li{cursor:pointer; width:173px;display:inline-block;font-size:18px; background:#ffdde8;margin-top:4px}
 #con #box .finish ul li.one{padding-left:4px;margin-right:-10px}
@@ -55,7 +55,8 @@ b{font-weight:100}
 /*#con #box .finish input.last{width:80px}*/
 #con #box .finish input.lasts{width:15px;margin-top:44px}
 #con #box .finish span{margin-left:-20px; margin-top:58px}
-#con #box .finish span#errmsg{display: inline-block; width:288px; height: 38px;color:#f00; font-size:18px; position: absolute;left:51px; top:148px}
+#con #box .finish span#spans{ display:inline-block;width:100px; height: 20px;position: absolute;left:239px; top:36px}
+#con #box .finish span#errmsg{display: inline-block; width:288px; height: 38px;color:#f00; /*font-size:18px;*/ position: absolute;left:51px; top:148px}
 /*#con #box .finish .yzm{ width:104px; height:30px;margin-left:124px;margin-top:-42px}*/
 /*#con #box .finish a.picyzm{ width:98px; height:30px;color:#0000ee; font-size:14px;margin-left:230px;margin-top:-26px;}*/
 #con #box .finish a.vip{font-size:14px; color:#fa1d79;margin-left:55px;margin-top:54px;}
