@@ -6,7 +6,7 @@ ul,ol{list-style:none;}
 img{border:0;display:block;}
 body{font-size:12px;color:#3e3e3e;font-family:"微软雅黑";}
 a{text-decoration:none;color:#000;}
-a:hover{texr-decoration:none;color:#f60;}
+a:hover{text-decoration:none;color:#f60;}
 /*======公共样式=====*/
 .w{width:1200px;margin:0 auto;}
 .l{float:left;}
@@ -69,7 +69,8 @@ a:hover{texr-decoration:none;color:#f60;}
 #con1 .news .box2{ width:0px; height:0px; border-top:20px solid #fff; border-right:20px solid #fff;border-bottom:20px solid #fff;border-left:20px solid #5b5a5c;}  
 #con1 .news .box3{font-size:14px;font-weight:bold;margin-top:10px}
 #con1 .hot{width:100%;}
-#con1 .hot li{margin-right:5px}
+#con1 .hot li{margin-right:5px;opacity:0.6;}
+#con1 .hot li:hover{opacity:1;}
 #con1 .hot .up{margin-top:-281px;}
 
 
@@ -89,13 +90,15 @@ a:hover{texr-decoration:none;color:#f60;}
 #con2 .new .card .name1 li a{color:#777777;}
 #con2 .new .card .name1 li a:hover{color:#ff637f}
 
-#con2 .new .flower li{ height:295px;border:1px solid #ccc;margin-right:20px;position: relative;}
+#con2 .new .flower li{ height:295px;border:1px solid #ccc;margin-right:20px;position: relative;transform:scale(.9)}
+#con2 .new .flower li:hover {transform:scale(1);}
 #con2 .new .flower li .one{color:#2d2d2e;font-size:18px;margin-left:8px;margin-right:40px}
 #con2 .new .flower li .two{position:absolute;top:255px;left:8px;color:#f52740;font-size:16px}
 #con2 .new .tops{height:629px;width:273px; border:1px solid #ccc}
 #con2 .new .tops h3{color:#ff637f; font-size:15px; margin: 5px 5px}
 #con2 .new .tops #line{width:260px; height:1px;border-bottom:1px solid #ff637f;margin:5px 5px}
 #con2 .new .tops .img1{ position:relative;width:260px; height:110px; border-bottom:1px dashed #ccc;margin:5px 5px;padding:2px 2px}
+#con2 .new .tops .img1:hover img{transform: scale(1.2);}
 #con2 .new .tops .last{border:0}
 #con2 .new .tops  .img1 img{width:110px; height:110px;}
 #con2 .new .tops  .img1 span{ position:absolute}
@@ -104,7 +107,8 @@ a:hover{texr-decoration:none;color:#f60;}
 #con2 .new .tops  .img1 .san{top:40px;left:125px;}
 #con2 .new .tops  .img1 .si{top:80px;left:125px;}
 #con2 .new .flower2{margin-top:-295px; width:920px; height:295px; margin-bottom:4px}
-#con2 .new .flower2 .down{ height:295px; border:1px solid #ccc;margin-right:4px; position:relative}
+#con2 .new .flower2 .down{ height:295px; border:1px solid #ccc;margin-right:4px; position:relative;transform:scale(.9)}
+#con2 .new .flower2 .down:hover{transform:scale(1);}
 #con2 .new .flower2 .down .one{font-size:16px;display:block; margin-left:5px; margin-top:10px}
 #con2 .new .flower2 .down .two{ position:absolute;color:#f52740;top:260px;left:5px}
 #con2 .new .flower2 .down .three{font-size:12px;}
@@ -119,6 +123,7 @@ a:hover{texr-decoration:none;color:#f60;}
 #con3 .news .box3{font-size:14px;font-weight:bold;margin-top:10px}
 #con3 .choice{width:100%; overflow:hidden;text-align:center;}
 #con3 .choice li{ display:inline-block;width:220px; height:295px;border:1px solid #ccc;margin-right:21px;margin-bottom:21px ;position:relative}
+#con3 .choice li:hover img{transform: scale(1.2) rotate(-360deg); transition: all 2s ease 0s}
 #con3 .choice li.last{margin-right:0} 
 #con3 .choice li.down{margin-bottom:0}
 #con3 .choice li img{width:220px; height:220px}

@@ -928,6 +928,8 @@
 	};
 </script>
 <script type="text/javascript" src="../js/jquery-1.8.3.min.js" ></script>
+<script type="text/javascript" src="../js/tools.js" ></script>
+<script type="text/javascript" src="../js/cookie.js" ></script>
 <script type="text/javascript">
 	$.ajax({
 			url:"getGoodsList.php",
@@ -942,10 +944,10 @@
 					let goodsDesc=obj[i].goodsDesc;
 					let goodsName=obj[i].goodsName;
 					let beiyong1=obj[i].beiyong1;
-					let str="<li class='l'><img src='"+ goodsImg+"'><span class='yi'>"+goodsName+"</span><span class='er'>￥"+goodsPrice+"元</span><a href=''> <span class='san'>"+beiyong1+"</span></a><span class='si'>"+goodsDesc+"</li>";
+					let str="<li class='l' num="+goodsId+"><img src='"+ goodsImg+"'><span class='yi'>"+goodsName+"</span><span class='er'>￥"+goodsPrice+"元</span><a href=''> <span class='san'>"+beiyong1+"</span></a><span class='si'>"+goodsDesc+"</li>";
 					$(".lis0").append(str);					
 				}
-				var obj=eval(data);
+
 				for(i=16;i<32;i++){
 					let goodsId=obj[i].goodsId;
 					let goodsPrice=obj[i].goodsPrice;
@@ -953,10 +955,10 @@
 					let goodsDesc=obj[i].goodsDesc;
 					let goodsName=obj[i].goodsName;
 					let beiyong1=obj[i].beiyong1;
-					let str="<li class='l'><img src='"+ goodsImg+"'><span class='yi'>"+goodsName+"</span><span class='er'>￥"+goodsPrice+"元</span><a href=''> <span class='san'>"+beiyong1+"</span></a><span class='si'>"+goodsDesc+"</li>";
+					let str="<li class='l' num="+goodsId+"><img src='"+ goodsImg+"'><span class='yi'>"+goodsName+"</span><span class='er'>￥"+goodsPrice+"元</span><a href=''> <span class='san'>"+beiyong1+"</span></a><span class='si'>"+goodsDesc+"</li>";
 					$(".lis1").append(str);					
 				}
-				var obj=eval(data);
+
 				for(i=32;i<48;i++){
 					let goodsId=obj[i].goodsId;
 					let goodsPrice=obj[i].goodsPrice;
@@ -964,10 +966,10 @@
 					let goodsDesc=obj[i].goodsDesc;
 					let goodsName=obj[i].goodsName;
 					let beiyong1=obj[i].beiyong1;
-					let str="<li class='l'><img src='"+ goodsImg+"'><span class='yi'>"+goodsName+"</span><span class='er'>￥"+goodsPrice+"元</span><a href=''> <span class='san'>"+beiyong1+"</span></a><span class='si'>"+goodsDesc+"</li>";
+					let str="<li class='l' num="+goodsId+"><img src='"+ goodsImg+"'><span class='yi'>"+goodsName+"</span><span class='er'>￥"+goodsPrice+"元</span><a href=''> <span class='san'>"+beiyong1+"</span></a><span class='si'>"+goodsDesc+"</li>";
 					$(".lis2").append(str);					
 				}
-				var obj=eval(data);
+
 				for(i=48;i<64;i++){
 					let goodsId=obj[i].goodsId;
 					let goodsPrice=obj[i].goodsPrice;
@@ -975,10 +977,10 @@
 					let goodsDesc=obj[i].goodsDesc;
 					let goodsName=obj[i].goodsName;
 					let beiyong1=obj[i].beiyong1;
-					let str="<li class='l'><img src='"+ goodsImg+"'><span class='yi'>"+goodsName+"</span><span class='er'>￥"+goodsPrice+"元</span><a href=''> <span class='san'>"+beiyong1+"</span></a><span class='si'>"+goodsDesc+"</li>";
+					let str="<li class='l' num="+goodsId+"><img src='"+ goodsImg+"'><span class='yi'>"+goodsName+"</span><span class='er'>￥"+goodsPrice+"元</span><a href=''> <span class='san'>"+beiyong1+"</span></a><span class='si'>"+goodsDesc+"</li>";
 					$(".lis3").append(str);					
 				}
-				var obj=eval(data);
+
 				for(i=0;i<16;i++){
 					let goodsId=obj[i].goodsId;
 					let goodsPrice=obj[i].goodsPrice;
@@ -986,10 +988,10 @@
 					let goodsDesc=obj[i].goodsDesc;
 					let goodsName=obj[i].goodsName;
 					let beiyong1=obj[i].beiyong1;
-					let str="<li class='l'><img src='"+ goodsImg+"'><span class='yi'>"+goodsName+"</span><span class='er'>￥"+goodsPrice+"元</span><a href=''> <span class='san'>"+beiyong1+"</span></a><span class='si'>"+goodsDesc+"</li>";
+					let str="<li class='l' num="+goodsId+"><img src='"+ goodsImg+"'><span class='yi'>"+goodsName+"</span><span class='er'>￥"+goodsPrice+"元</span><a href=''> <span class='san'>"+beiyong1+"</span></a><span class='si'>"+goodsDesc+"</li>";
 					$(".lis4").append(str);					
 				}
-				var obj=eval(data);
+
 				for(i=64;i<69;i++){
 					let goodsId=obj[i].goodsId;
 					let goodsPrice=obj[i].goodsPrice;
@@ -997,9 +999,23 @@
 					let goodsDesc=obj[i].goodsDesc;
 					let goodsName=obj[i].goodsName;
 					let beiyong1=obj[i].beiyong1;
-					let str="<li class='l'><img src='"+ goodsImg+"'><span class='yi'>"+goodsName+"</span><span class='er'>￥"+goodsPrice+"元</span><a href=''> <span class='san'>"+beiyong1+"</span></a><span class='si'>"+goodsDesc+"</li>";
+					let str="<li class='l' num="+goodsId+"><img src='"+ goodsImg+"'><span class='yi'>"+goodsName+"</span><span class='er'>￥"+goodsPrice+"元</span><a href=''> <span class='san'>"+beiyong1+"</span></a><span class='si'>"+goodsDesc+"</li>";
 					$(".lis5").append(str);					
 				}
+				
+				
+				/*var uls=$i("showss").children;
+				var number; 
+				for(var j=0;j<16;j++){
+					(function(j){					
+						uls[j].onclick=function(){
+							number=uls[j].getAttribute("src");
+							//alert(number)
+							setCookie("number",number,7);
+							location.href="detail.html";
+						}
+					})(j)			
+				}*/
 				
 			}	
 		})

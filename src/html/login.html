@@ -122,11 +122,11 @@
 	})
 	
 	$("#username").blur(function(){
-		if($("#one").html=="✔"){
+		if($("#one").html()=="✔"){
 			$.ajax({
 			url:"checkUser.php",
 			async:true,
-			data:"userName="+this.value,
+			data:"userName="+$("#username").val(),
 			type:"get",
 			success:function(data){
 				if(data=="1"){

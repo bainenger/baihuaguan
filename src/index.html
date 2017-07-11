@@ -114,14 +114,14 @@
                 <h3>Love is not waiting</h3>
                 <div class="line"></div>
                 <ul class="name1">
-                	<li class="l"><a href="#">玫瑰花</a></li>
-                	<li class="l"><a href="#">百合</a></li>
-                    <li class="l"><a href="#">向日葵</a></li>
-            		<li class="l"><a href="#">康乃馨</a></li>
-                	<li class="l"><a href="#">扶郎</a></li>
-                	<li class="l"><a href="#">百合+玫瑰</a></li>
-                	<li class="l"><a href="#">百合+康乃馨</a></li>
-                	<li class="l"><a href="#">玫瑰+康乃馨</a></li>
+                	<li class="l"><a href="html/list.html">玫瑰花</a></li>
+                	<li class="l"><a href="html/list.html">百合</a></li>
+                    <li class="l"><a href="html/list.html">向日葵</a></li>
+            		<li class="l"><a href="html/list.html">康乃馨</a></li>
+                	<li class="l"><a href="html/list.html">扶郎</a></li>
+                	<li class="l"><a href="html/list.html">百合+玫瑰</a></li>
+                	<li class="l"><a href="html/list.html">百合+康乃馨</a></li>
+                	<li class="l"><a href="html/list.html">玫瑰+康乃馨</a></li>
                 </ul>
             </div>
             <ul class="l flower">
@@ -295,8 +295,8 @@
         <div class="contact">
                 <span class="one">400-699-3230</span><br/>
                 <span class="two">（周一至周日8：00-21：00）</sapn><br/>
-                <span class="l three"><img src="images/index/zx_qq.gif"></span>
-                <span class="l three"><img src="images/index/zx_qq.gif"></span><br/><br/>
+                <span class="l three"><a href="http://www.baihuaguan.com/chat.php?arg=9006113&style=9&keyword=http%3A//www.so.com/link%3Fm%3DaTylIAkToJ1TN0Wf72tS%252BgdszgIvtRkVwTKb4jMETABSn7F0EuiWAUw5FuPSE7gkPqdRi8hWN5gJpCaXWo0gfSdh%252FB%252F2N0yr6HWBwWRwrFXc2HOQEVP%252BACnvs856TqU7eF34%252B67YG6K92eOLz325swQ%253D%253D&kf="><img src="images/index/zx_qq.gif"></a></span>
+                <span class="l three"><a href="http://www.baihuaguan.com/chat.php?arg=9006113&style=9&keyword=http%3A//www.so.com/link%3Fm%3DaTylIAkToJ1TN0Wf72tS%252BgdszgIvtRkVwTKb4jMETABSn7F0EuiWAUw5FuPSE7gkPqdRi8hWN5gJpCaXWo0gfSdh%252FB%252F2N0yr6HWBwWRwrFXc2HOQEVP%252BACnvs856TqU7eF34%252B67YG6K92eOLz325swQ%253D%253D&kf="><img src="images/index/zx_qq.gif"></a></span><br/><br/>
                 <span class="four">24小时网上订花咨询QQ</span>
         </div>
     </div>
@@ -332,10 +332,11 @@
 </html>
 <script type="text/javascript" src="js/tools.js" ></script>
 <script type="text/javascript" src="js/jquery-1.8.3.min.js" ></script>
-<script type="text/javascript" src="js/cookieTools.js" ></script>
+<script type="text/javascript" src="js/cookie.js" ></script>
 <script type="text/javascript">
 		$(function(){
-			var str = getCookie("userName");			
+			var str = getCookie("userName");
+			console.log(str);
 			if(str!=""){				
 				$("#entry").text(str+",欢迎来到鲜花馆");
 			}
@@ -343,7 +344,7 @@
 </script>
 <script type="text/javascript">
 	var timer=null;
-	window.onload=function(){
+	
 		$i("close").onmousedown=function(){			
 			$i("box1").style.right="-114px";
 			$i("close").style.display="none";
@@ -359,7 +360,7 @@
 			clearInterval(timer);
 			$i("help").style.display="none";
 		};	
-	};
+	
 	
 	
 	
@@ -371,6 +372,7 @@
    
        $i("right").onclick = function(){
        	     num++;   
+       	  
        	     if(num>= $i("wrap").children.length){
        	     	num=0;
        	     }
@@ -430,15 +432,16 @@
        	  clearInterval(time)
         time = setInterval($i("right").onclick,2000);
        };
-</script>
-<script type="text/javascript">
-	$("#lunbo0").click(function(){
-		location.href="html/list.html";		
-	})
-	$("#lunbo1").click(function(){
-		location.href="html/list.html";		
-	})
-	$("#lunbo2").click(function(){
-		location.href="html/active2.html";		
-	})
+
+
+	$i("wrap").onclick=function(){
+		console.log(num);
+	    if(num==2){
+	    	location.href="html/active2.html";
+	    }else{
+	    	location.href="html/list.html";
+	    }
+	}
+	
+
 </script>

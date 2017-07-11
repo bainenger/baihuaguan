@@ -7,7 +7,7 @@
 function saveCookie(key,value,dayCount){
 	var d = new Date();
 	d.setDate(d.getDate()+dayCount);
-	document.cookie = encodeURIComponent(key+"="+value)+";expires="+d.toGMTString();	
+	document.cookie = key+"="+encodeURIComponent(value)+";expires="+d.toGMTString();	
 }
 
 

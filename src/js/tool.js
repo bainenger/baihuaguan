@@ -28,7 +28,7 @@
 function checkAll(type,value){ 		 
 	switch(type) {				      
 		case 'username':
-		if((/^[\u4E00-\u9FA5]+$/g).test(value)){   
+		if((/^[a-zA-Z_]\w{5,14}$/).test(value)){   
 				return true;   
 		}else{  
 			return false;

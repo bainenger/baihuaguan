@@ -121,14 +121,25 @@ url(../images/detail/bk3_7.jpg) no-repeat; height:100%; margin-right:170px; posi
 #con #con4 ul.pics1 li.wu{ background:url(../images/detail/bk3_12.png) #FBFCFE no-repeat; }
 #con #con4 ul.pics1 li.lu{ background:url(../images/detail/bk3_13.png) #FBFCFE no-repeat; }
 
-#con #con5{width:100%; overflow:hidden;margin-top:50px} 
+#con #con5{width:100%; overflow:hidden;margin-top:50px;position: relative;} 
 #con #con5 .left{ background:url(../images/detail/bk3_2.jpg) #fbfcff no-repeat; width:652px;height:431px;}
 #con #con5 .right{ background:url(../images/detail/bk3_3.jpg)  no-repeat; width:548px;height:313px;}
+#con #con5  b{ position:absolute;font-size: 40px;top:60px; left: 497px;}
+#con #con5  span{ position: absolute;}
+#con #con5  span.one{ font-size:30px; left:750px; top:160px}
+#con #con5  span.two{font-size:18px; left:750px; top:210px}
+#con #con5  span.three{font-size:25px;left:750px;top:250px;}
+#con #con5  span.three b{top:10px; left:75px;font-size:12px; font-weight:100;text-decoration:line-through;}
 
-
-#con #con6{width:100%; overflow:hidden;margin-top:50px} 
+#con #con6{width:100%; overflow:hidden;margin-top:50px;position: relative;} 
 #con #con6 .left{ background:url(../images/detail/bk3_3.jpg) no-repeat; width:544px;height:313px;}
 #con #con6 .right{ background:url(../images/detail/bk3_6.jpg) #fbfcff no-repeat; width:656px;height:417px;}
+#con #con6  b{ position:absolute;font-size: 40px;top:60px; left: 80px;}
+#con #con6  span{ position: absolute;}
+#con #con6  span.one{ font-size:30px; left:100px; top:160px}
+#con #con6  span.two{font-size:18px; left:100px; top:210px}
+#con #con6  span.three{font-size:25px;left:100px;top:250px;}
+#con #con6  span.three b{top:10px; left:75px;font-size:12px; font-weight:100;text-decoration:line-through;}
 
 #con p.more{margin:0 auto; font-size:30px; border:1px solid #ccc; padding:5px 20px; width:250px;text-align:center;margin-top:50px}
 /*========footer=========*/
