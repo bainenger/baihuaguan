@@ -42,7 +42,7 @@ a:hover{texr-decoration:none;color:#f60;}
 #nav ul li.last{ position:relative}
 #nav ul li.last img{ position:absolute; top:0px; left:50px}
 #nav ul li a{color:#fff;}
-#nav ul li.car{width:195px; height:29px; background:#fff; border-radius:5px;/* position:absolute;top:-30px;*/ margin-top:10px}
+#nav ul li.car{ height:29px; background:#fff; border-radius:5px;/* position:absolute;top:-30px;*/ margin-top:10px}
 #nav ul li.car{ font-size:12px;}
 #nav ul li.car img{margin-left:5px;margin-top:4px;}
 #nav ul li.car a{ color:#777777;margin-top:-10px; margin-left:20px}

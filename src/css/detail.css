@@ -42,7 +42,7 @@ a:hover{texr-decoration:none;color:#f60;}
 #nav ul li.last{ position:relative}
 #nav ul li.last img{ position:absolute; top:0px; left:50px}
 #nav ul li a{color:#fff;}
-#nav ul li.car{width:195px; height:29px; background:#fff; border-radius:5px;/* position:absolute;top:-30px;*/ margin-top:10px}
+#nav ul li.car{ height:29px; background:#fff; border-radius:5px;/* position:absolute;top:-30px;*/ margin-top:10px}
 #nav ul li.car{ font-size:12px;}
 #nav ul li.car img{margin-left:5px;margin-top:4px;}
 #nav ul li.car a{ color:#777777;margin-top:-10px; margin-left:20px}
@@ -58,15 +58,15 @@ a:hover{texr-decoration:none;color:#f60;}
 #con #con2{width:100%; height:620px; border:1px  solid #ccc;margin-top:-120px}
 #con #con2 .left{ width:452px; height:100%; position:relative}
 
-#con #con2 .left #bigbox{width:420px; height:480px; /*background-image:url(../images/detail/4370_P_1486403482397.jpg) ;*/ background-size:420px 480px; border:1px solid #ccc;margin-top:10px; margin-left:10px; position:relative}
-#con #con2 .left #bigbox #mirror{width:200px; height:200px; background:#fff;opacity:0.5;filter:alpha(opacity:50); position:absolute; display:none}
+#con #con2 .left #bigbox{width:420px; height:480px; background-size:420px 480px; border:1px solid #ccc;margin-top:10px;margin-left:10px; position:relative;}
+#con #con2 .left #bigbox #mirror{width:200px; height:200px; background:#fff;opacity:0.5;filter:alpha(opacity:50); position:absolute; display:none;top:0px}
 #con #con2 .left #bigbox1{ width:96%; height:110px; }
 #con #con2 .left #bigbox1 div{width:18%; height:88px; border:1px solid #ccc;margin:3px;margin-top:16px}
 #con #con2 .left #bigbox1 div img{ width:100%; height:100%}
 #con #con2 .left #bigbox1 div.one{margin-left:6px}
 
 #con #con2 .left #smallbox { width:400px; height:400px;z-index:1; border:1px solid #ccc; position:relative;margin-top:-592px;margin-left:433px;overflow:hidden; display:none}
-#con #con2 .left #smallbox #showImg{width:840px; height:960px; background-image:url(../images/detail/4370_P_1486403482397.jpg) ; background-size:840px 960px; position:absolute}
+#con #con2 .left #smallbox #showImg{width:840px; height:960px; /*background-image:url(../images/detail/4370_P_1486403482397.jpg) ;*/ background-size:840px 960px; position:absolute}
 
 
 #con #con2 .right{width:686px; height:100%;}

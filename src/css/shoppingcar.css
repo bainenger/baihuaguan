@@ -42,7 +42,7 @@ a:hover{texr-decoration:none;color:#f60;}
 #nav ul li.last{ position:relative}
 #nav ul li.last img{ position:absolute; top:0px; left:50px}
 #nav ul li a{color:#fff;}
-#nav ul li.car{width:195px; height:29px; background:#fff; border-radius:5px;/* position:absolute;top:-30px;*/ margin-top:10px}
+#nav ul li.car{height:29px; background:#fff; border-radius:5px;/* position:absolute;top:-30px;*/ margin-top:10px}
 #nav ul li.car{ font-size:12px;}
 #nav ul li.car img{margin-left:5px;margin-top:4px;}
 #nav ul li.car a{ color:#777777;margin-top:-10px; margin-left:20px}
@@ -51,11 +51,20 @@ a:hover{texr-decoration:none;color:#f60;}
 
 /*====con======*/
 #con{width:100%; overflow:hidden}
-#con .content{width:100%; overflow:hidden; border:1px solid #ccc; padding:100px 0;margin-top:20px}
+#con .content{width:100%; overflow:hidden; border:1px solid #ccc; padding:100px 0;margin-top:20px;}
 #con .content span{ display:block;margin-top:-87px;margin-left:10px}
 #con .content p{ text-align:center}
-#con .content p.inf{ font-size:14px; color:#ff0000; font-weight:bold}
-
+#con .content p.inf{ font-size:14px;  font-weight:bold}
+#con .content .cars{width:100%; overflow: hidden;padding:10px 10px;margin-left:100px;}
+#con .content .cars b{margin-left:20px;}
+#con .content .cars .images,#con .content .cars .images img{width:100px; height: 100px;}
+#con .content .cars .info{height:30px;line-height:30px;}
+#con .content .cars .two{margin-left:30px;margin-top:40px}
+#con .content .cars .price{margin-left:100px;height:30px; line-height:30px;margin-top:30px}
+#con .content .cars .add{margin-left:100px;margin-top:35px}
+#con .content .cars .add strong{width:20px; height: 20px; background: #ccc;font-size:14px}
+#con .content .cars .add input{width:20px; height: 20px;text-align: center;}
+#con .content .cars .del{margin-left:30px;margin-top:37px; width: 40px; height: 20px;  line-height:20px;text-align: center;}
 /*========footer=========*/
 
 

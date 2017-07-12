@@ -13,10 +13,10 @@
     <div id="box2"><img src="../images/index/baihuaguan_fu_xiao.png"></div>
 </div>
 <!----------help-------------->
-<div id="help">
+<!--<div id="help">
 	<a href="http://www.baihuaguan.com/chat.php?arg=9006113&style=9&keyword=http%3A//www.so.com/link%3Fm%3DaTylIAkToJ1TN0Wf72tS%252BgdszgIvtRkVwTKb4jMETABSn7F0EuiWAUw5FuPSE7gkPqdRi8hWN5gJpCaXWo0gfSdh%252FB%252F2N0yr6HWBwWRwrFXc2HOQEVP%252BACnvs856TqU7eF34%252B67YG6K92eOLz325swQ%253D%253D&kf="><img src="../images/index/baihuaguan_kuang_4000-518-210.jpg"></a>
     <span id="close1">×</span>
-</div>	
+</div>	-->
 <!-----------header--------------->
 <div id="header">
     	<div class="w">
@@ -58,7 +58,7 @@
                 <li ><a href="list1.html">精致花篮</a></li>
                 <li ><a href="list1.html">高端鲜花</a></li>
                 <li class="last"  ><a href="list.html">特价鲜花</a><img src="../images/index/nava_hover.gif"></li>
-                <li class="car r"><img src="../images/list/pic16.png" class="l"><a href="shoppingcar.html"  title="查看购物车" class="l">购物车中有 0 件商品</a></li>
+                <li class="car r"><img src="../images/list/pic16.png" class="l"><a href="shoppingcar.html"  title="查看购物车" class="l">购物车</a></li>
             </ul>
     	</div>
 </div>
@@ -71,18 +71,21 @@
         </div>
         <div id="con2">
                 <div class="left l">
-                        <div id="bigbox" style="background: url(../images/detail/4370_P_1486403482397.jpg) ; background-size:420px 480px;; ">
+                        <div id="bigbox" >
+                        	<img class="bigbox" style="width:420px;height:480px;">
                             <div id="mirror"></div>
                         </div>
                         <div id="bigbox1">
-                            <div id="box1" class="l one"><img src="../images/detail/1.jpg"></div>
-                            <div id="box2" class="l"><img src="../images/detail/2.jpg"></div>
-                            <div id="box3" class="l"><img src="../images/detail/3.jpg"></div>
-                            <div id="box4" class="l"><img src="../images/detail/4.jpg"></div>
-                            <div id="box5" class="l"><img src="../images/detail/5.jpg"></div>
+                            <div id="box1" class="l one"><img class="box1"></div>
+                            <div id="box2" class="l"><img class="box2"></div>
+                            <div id="box3" class="l"><img class="box3"></div>
+                            <div id="box4" class="l"><img class="box4"></div>
+                            <div id="box5" class="l"><img class="box5"></div>
                         </div>
                         <div id="smallbox">
-                            <div id="showImg"></div>
+                            <div id="showImg">
+                            	<img class="showImg" style="width:840px; height:960px;">
+                            </div>
                         </div>
               </div>
           	  <div class="right l">
@@ -106,8 +109,8 @@
                     </div>
                     <div class="buy">
                     	<br/>
-                    	<sapn class="l yi">数量：<input type="text" value="1"></sapn>
-                    	<a href="#"><span class="l er"><img src="../images/detail/buy.jpg"></sapn></a>
+                    	<sapn class="l yi">数量：<input type="text" value="1" id="nums"></sapn>
+                    	<a href="#"><span class="l er" id="gocart"><img src="../images/detail/buy.jpg"></sapn></a>
                     	<a href="#"><span class="l san"><img src="../images/detail/53kf.jpg"></span></a>
                     	<sapn class="l si">免费热线：400-699-3230</sapn>
                     </div>
@@ -266,7 +269,7 @@
            <div class="right l">
             	<ul class="select" id="select">     
                 	<li class="l on">产品描述</li>
-                	<li class="l">买家评价</li>
+                	<!--<li class="l">买家评价</li>-->
                 	<li class="l">购物流程</li>
                 	<li class="l">如何支付</li>
                 	<li class="l">为何选择我们</li>
@@ -281,12 +284,12 @@
 						<img src="../images/detail/4370_P_1486403483683.jpg" class="pics">
 						<img src="../images/detail/4370_P_1486403483084.jpg" class="pics">
 					</div>
-					<div class="two">
+					<!--<div class="two">
 							<ul class="texts">
 								<li>用户评论（共<span>2443</span>条评论）</li>
 								
 							</ul>
-					</div>
+					</div>-->
 					<div class="three">
 							<p>尊敬的客户，欢迎光临百花馆鲜花店，为了方便您的订购，本花店为您提供了以下几种订购方式，供君选择，具体方式如下：</p>
 							<p><b>温馨提示：</b></p>
@@ -442,15 +445,46 @@
 			move($i("box1"),0,"right");
 			$i("close").style.display="block";	
 		}
-		timer=setInterval(function(){
+		/*timer=setInterval(function(){
 			$i("help").style.display="block"
 			},2000);
 		$i("close1").onmousedown=function(){			
 			clearInterval(timer);
 			$i("help").style.display="none";
-		};
+		};*/
 		
-	
+		
+		let goodsId=getCookie("number");
+//		console.log(goodsId);
+		jQuery.ajax({
+		type:"get",
+		url:"getGoodsInfo.php",
+		async:true,
+		data:"goodsId="+goodsId,
+		success:function(data){
+			
+//			console.log(data)
+			let obj=eval('('+data+')');					
+				let goodsPrice=obj.goodsPrice;
+				let goodsDesc=obj.goodsDesc;
+				let goodsName=obj.goodsName;	
+				let beiyong2=obj.beiyong2;
+				let beiyong3=obj.beiyong3;
+				let beiyong4=obj.beiyong4;
+				let beiyong5=obj.beiyong5;
+				let beiyong6=obj.beiyong6;
+				
+				let goodsImg=obj.goodsImg;			
+				jQuery(".box1").attr({src:beiyong2})
+				jQuery(".box2").attr({src:beiyong3})
+				jQuery(".box3").attr({src:beiyong4})
+				jQuery(".box4").attr({src:beiyong5})
+				jQuery(".box5").attr({src:beiyong6})
+				jQuery(".bigbox").attr({src:goodsImg})
+				jQuery(".showImg").attr({src:goodsImg})
+			}
+
+	})
 	
 		
 				
@@ -502,9 +536,12 @@
 			for (var j=0;j<boxs.length;j++) {
 				   boxs[j].className="l";
 				}
+			var s=this.children.getAttribute("src");
+		
+			
 			boxs[i].className="l one";
-			bigbox.style.backgroundImage="url(../images/detail/"+(i+1)+".jpg)";
-			$i("showImg").style.backgroundImage="url(../images/detail/"+(i+1)+".jpg)";
+			bigbox.style.backgroundImage=s;
+			$i("showImg").style.backgroundImage=s;
 			  }
 	   }
 	   
@@ -529,6 +566,21 @@
 			};	
 		}
 		
-
+		var vipName=getCookie("userName");
+		goodsId=getCookie("number");
+		var goodsCount=$i("nums").value;
+		$i("gocart").onclick=function(){
+			jQuery.ajax({
+			type:"get",
+			url:"addShoppingCart.php",
+			async:true,
+			data:{"vipName":vipName,"goodsId":goodsId,"goodsCount":goodsCount},
+			
+			success:function(data){
+//				console.log(data);
+				location.href="shoppingcar.html";
+			}
+		})
+		}
 
 </script>

@@ -13,10 +13,10 @@
     <div id="box2"><img src="../images/index/baihuaguan_fu_xiao.png"></div>
 </div>
 <!----------help-------------->
-<div id="help">
+<!--<div id="help">
 	<a href="http://www.baihuaguan.com/chat.php?arg=9006113&style=9&keyword=http%3A//www.so.com/link%3Fm%3DaTylIAkToJ1TN0Wf72tS%252BgdszgIvtRkVwTKb4jMETABSn7F0EuiWAUw5FuPSE7gkPqdRi8hWN5gJpCaXWo0gfSdh%252FB%252F2N0yr6HWBwWRwrFXc2HOQEVP%252BACnvs856TqU7eF34%252B67YG6K92eOLz325swQ%253D%253D&kf="><img src="../images/index/baihuaguan_kuang_4000-518-210.jpg"></a>
     <span id="close1">×</span>
-</div>	
+</div>-->	
 <!-----------header--------------->
 <div id="header">
     	<div class="w">
@@ -58,7 +58,7 @@
                 <li ><a href="list1.html">精致花篮</a></li>
                 <li ><a href="list1.html">高端鲜花</a></li>
                 <li class="last"  ><a href="list.html">特价鲜花</a><img src="../images/index/nava_hover.gif"></li>
-                <li class="car r"><img src="../images/list/pic16.png" class="l"><a href="#"  title="查看购物车" class="l">购物车中有 0 件商品</a></li>
+                <li class="car r"><img src="../images/list/pic16.png" class="l"><a href="#"  title="查看购物车" class="l">购物车</a></li>
             </ul>
     	</div>
 </div>
@@ -68,7 +68,18 @@
 	<div class="w">
     	<div class="content">
         	<span>系统信息</span>
-            <p class="inf">您的购物车中没有商品！</p>
+           <!-- <ul class="cars">
+            	<li class="one l"><img src="../images/detail/1_05435819855579095_100.jpg"></li>
+            	<li class="two l">满载幸福</li>
+            	<li class="price l">￥659元</li>
+            	<li class="add l">
+            		<strong class="dec">－</strong>
+            		<input type="text" value="1">
+            		<strong class="inc">＋</strong>            		
+            	</li>
+            	<li class="price l"><b>￥659元</b></li>
+            	<li class="del l"><input type="button" value="删除"></li>
+            </ul>-->
             <p><a href="detail.html">返回上一页</a></p>
         </div>
     </div>
@@ -147,9 +158,11 @@
 </body>
 </html>
 <script src="../js/tools.js"></script>
+<script type="text/javascript" src="../js/cookie.js" ></script>
+<script type="text/javascript" src="../js/jquery-1.8.3.min.js" ></script>
 <script type="text/javascript">
 	var timer=null;
-	window.onload=function(){
+	
 		$i("close").onmousedown=function(){			
 			$i("box1").style.right="-114px";
 			$i("close").style.display="none";
@@ -158,17 +171,91 @@
 			move($i("box1"),0,"right");
 			$i("close").style.display="block";	
 		}
-		timer=setInterval(function(){
+		/*timer=setInterval(function(){
 			$i("help").style.display="block"
 			},2000);
 		$i("close1").onmousedown=function(){			
 			clearInterval(timer);
 			$i("help").style.display="none";
-		};
+		};*/
+	var vipName=getCookie("userName");
+
+	jQuery.ajax({	
+	type:"get",
+	data:{'vipName':vipName},
+	url:"getShoppingCart.php",
+	async:true,
+	success:function(data){
+		let obj=eval(data);
+		//alert(data)
+		for(var i in obj){	
+			let goodsId=obj[i].goodsId;
+			let goodsPrice=obj[i].goodsPrice;
+			let goodsImg=obj[i].goodsImg;
+			let goodsName=obj[i].goodsName;			
+			let beiyong2=obj[i].beiyong2;
+			let goodsCount=obj[i].goodsCount;
+			//console.log(beiyong2)
+			var str0="<ul class='cars' ord='"+goodsId+"'><li class='images l'><img src='"+beiyong2+"'></li>";
+			var str1="<li class='two l'>"+goodsName+"</li>";
+            var str2="<li class='price l'>￥"+goodsPrice+"元</li>";	
+            var str3="<li class='add l'><strong class='dec'>－</strong><input type='text' value='"+goodsCount+"'><strong class='inc'>＋</strong></li>";	
+            var str4="<li class='price l'><b>￥"+goodsPrice*goodsCount+"元</b></li>";	
+            var str5="<li class='del l'><input type='button' value='删除' class='delete'></li></ul>";
+			let str=str0+str1+str2+str3+str4+str5;
+			jQuery(".content").append(str);			
+		}
+		//数量加减
+			var jians=$(".dec");
+			var jias=$(".inc")
+			//减
+			for(var j in jians){
+				jians[j].onclick=function(){				
+				let count=jQuery(this).next();
+				//alert(count)
+				let num=count.val();
+				//alert(num)
+				num-=1;				
+				if(num<=1){
+					num=1;
+				}
+					count.val(num);
+				}				
+			}
+			//加
+			for(var j in jias){
+				jias[j].onclick=function(){
+				let count=jQuery(this).prev();
+				let num=parseInt(count.val());
+					num+=1;
+					count.val(num)
+				}				
+			}
+			//数量加减结束
+			jQuery(".cars").delegate(".delete", "click", function(){ 
+			console.log(this)
+			var that = this;
+			var ids=jQuery(this).parent().parent().attr("ord");
+			jQuery.get("deleteGoods.php", { "vipName": vipName, "goodsId": ids },function(data){
+					//console.log(data);
+				if(data=="1"){
+					location.reload();
+		    		jQuery(that).parents(".content").remove();
+		    		console.log("删除成功")
+				}else{
+					console.log("删除失败")
+				}
+		    		
+			});
+		
+		}); 
 		
 		
+		}
+	
+	})
 		
-	};
+
 </script>
  
 
